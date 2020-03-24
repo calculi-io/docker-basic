@@ -30,21 +30,9 @@
 				"segment_type": "build",
 				"job_steps": [
 					{
-						"name": "Pull",
-						"definition": "Pull",
-						"command": "docker login -u ${GR_DOCKERREGISTRY_USERNAME} -p ${GR_DOCKERREGISTRY_PASSWORD} ${GR_DOCKERREGISTRY_REPO_URL}\ndocker pull vw-basic-docker-test:latest",
-						"properties": null
-					},
-					{
 						"name": "Build",
 						"definition": "Build",
 						"command": "# build and tag to local\ndocker build -t vw-basic-docker-test:latest .",
-						"properties": null
-					},
-					{
-						"name": "Push",
-						"definition": "Push",
-						"command": "# tag to registry and push\ndocker tag vw-basic-docker-test:latest ${GR_DOCKERREGISTRY_REPO_URL}/vw-basic-docker-test:latest\ndocker push ${GR_DOCKERREGISTRY_REPO_URL}/vw-basic-docker-test:latest",
 						"properties": null
 					}
 				],
