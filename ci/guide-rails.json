@@ -32,7 +32,7 @@
 					{
 						"name": "Pull",
 						"definition": "Pull",
-						"command": "docker pull vw-basic-docker-test:latest",
+						"command": "docker login -u ${GR_DOCKERREGISTRY_USERNAME} -p ${GR_DOCKERREGISTRY_PASSWORD} ${GR_DOCKERREGISTRY_REPO_URL}\ndocker pull vw-basic-docker-test:latest",
 						"properties": null
 					},
 					{
