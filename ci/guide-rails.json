@@ -32,7 +32,7 @@
 					{
 						"name": "Build",
 						"definition": "Build",
-						"command": "# build and tag to local\ndocker build -t vw-basic-docker-test:latest .",
+						"command": "# build and tag to local\necho HELLO!\n# docker build -t vw-basic-docker-test:latest .",
 						"properties": null
 					}
 				],
@@ -90,9 +90,7 @@
 						"((gopath))"
 					]
 				},
-				"docker_options": {
-					"repository": "gr-docker-image-test:latest"
-				}
+				"docker_options": {}
 			}
 		],
 		"exit_actions": {
