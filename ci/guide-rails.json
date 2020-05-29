@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"version": 1
+		"version": 2
 	},
 	"application": {
 		"name": "basic-docker",
@@ -28,14 +28,6 @@
 			{
 				"name": "Build",
 				"segment_type": "build",
-				"job_steps": [
-					{
-						"name": "Build",
-						"definition": "Build",
-						"command": "# build and tag to local\necho HELLO!\n# docker build -t vw-basic-docker-test:latest .",
-						"properties": null
-					}
-				],
 				"exit_actions": {
 					"default": {
 						"code_analysis": {
@@ -90,7 +82,20 @@
 						"((gopath))"
 					]
 				},
-				"docker_options": {}
+				"docker_options": {},
+				"tasks": [
+					{
+						"name": "basic-docker",
+						"steps": [
+							{
+								"name": "Build",
+								"definition": "Build",
+								"command": "# build and tag to local\necho HELLO!\n# docker build -t vw-basic-docker-test:latest .",
+								"properties": null
+							}
+						]
+					}
+				]
 			}
 		],
 		"exit_actions": {
