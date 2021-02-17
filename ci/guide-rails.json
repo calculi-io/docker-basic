@@ -31,7 +31,6 @@
 				"exit_actions": {
 					"default": {
 						"code_analysis": {
-							"publish": false,
 							"properties": null
 						}
 					},
@@ -53,10 +52,7 @@
 					}
 				],
 				"deployment_strategy": {},
-				"application_init": {
-					"command": "",
-					"arguments": null
-				},
+				"application_init": {},
 				"instance_tags": [
 					{
 						"name": "application.name",
@@ -90,7 +86,7 @@
 							{
 								"name": "Build",
 								"definition": "Build",
-								"command": "# build and tag to local\necho HELLO!\n# docker build -t vw-basic-docker-test:latest .",
+								"command": "# build and tag to local\necho HELLO!\n# docker build -t vw-basic-docker-test:latest.",
 								"properties": null
 							}
 						]
@@ -103,10 +99,7 @@
 				"fetch_logs": true,
 				"notifications": [
 					{
-						"type": "slack",
-						"send_notification": false,
-						"to": null,
-						"message": ""
+						"type": "slack"
 					}
 				],
 				"code_analysis": {
@@ -118,10 +111,7 @@
 			"on_success": {
 				"notifications": [
 					{
-						"type": "slack",
-						"send_notification": false,
-						"to": null,
-						"message": ""
+						"type": "slack"
 					}
 				],
 				"code_analysis": null
@@ -129,10 +119,7 @@
 			"on_failure": {
 				"notifications": [
 					{
-						"type": "slack",
-						"send_notification": false,
-						"to": null,
-						"message": ""
+						"type": "slack"
 					}
 				],
 				"code_analysis": null
@@ -140,16 +127,29 @@
 			"on_abort": {
 				"notifications": [
 					{
-						"type": "slack",
-						"send_notification": false,
-						"to": null,
-						"message": ""
+						"type": "slack"
 					}
 				],
 				"code_analysis": null
 			}
 		},
 		"default_properties": [
+			{
+				"name": "gr.dockerregistry.ca_cert",
+				"value": "secret:121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.ca_cert",
+				"protected": true,
+				"type": "string",
+				"secret": true,
+				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.ca_cert"
+			},
+			{
+				"name": "gr.dockerregistry.password",
+				"value": "secret:121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.password",
+				"protected": true,
+				"type": "string",
+				"secret": true,
+				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.password"
+			},
 			{
 				"name": "gr.dockerregistry.repo_url",
 				"value": "docker.calculi.io:8443",
@@ -162,29 +162,10 @@
 				"type": "string",
 				"secret": true,
 				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.username"
-			},
-			{
-				"name": "gr.dockerregistry.password",
-				"value": "secret:121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.password",
-				"protected": true,
-				"type": "string",
-				"secret": true,
-				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.password"
-			},
-			{
-				"name": "gr.dockerregistry.ca_cert",
-				"value": "secret:121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.ca_cert",
-				"protected": true,
-				"type": "string",
-				"secret": true,
-				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.ca_cert"
 			}
 		],
 		"deployment_files": [],
-		"application_init": {
-			"command": "",
-			"arguments": null
-		},
+		"application_init": {},
 		"process": {
 			"init": {
 				"command": "bin/start-service.sh"
