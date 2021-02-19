@@ -86,7 +86,7 @@
 							{
 								"name": "Build",
 								"definition": "Build",
-								"command": "# build and tag to local\necho HELLO!\n# docker build -t vw-basic-docker-test:latest.",
+								"command": "# build and tag to local\necho HELLO!\n# docker build -t basic-docker-test:latest.",
 								"properties": null
 							}
 						]
