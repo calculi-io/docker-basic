@@ -47,8 +47,9 @@
 				"properties": [
 					{
 						"name": "gopath",
+						"value": "${SEGMENT_BASE_DIR}/cache/go",
 						"description": "GOPATH is set to ${SEGMENT_BASE_DIR}/cache/go by default, when caching is enabled. Caches are maintained on the worker where your build gets allocated. For a new worker assigned to the build, the cache will be re-created",
-						"value": "${SEGMENT_BASE_DIR}/cache/go"
+						"when": "0001-01-01T00:00:00Z"
 					}
 				],
 				"deployment_strategy": {},
@@ -56,22 +57,12 @@
 				"instance_tags": [
 					{
 						"name": "application.name",
-						"value": "((application.name))"
+						"value": "((application.name))",
+						"when": "0001-01-01T00:00:00Z"
 					}
 				],
 				"post_deployment_actions": {
-					"instances": null,
-					"loadbalanced": false,
-					"loadbalancer": {
-						"TargetGroupName": "",
-						"TargetGroupPort": 0,
-						"TargetGroupProtocol": "",
-						"TargetType": "",
-						"VPCID": "",
-						"HealthCheckEnabled": false,
-						"HealthCheckPort": "",
-						"UnhealthyThresholdCount": 0
-					}
+					"loadbalancer": {}
 				},
 				"cache_info": {
 					"paths": [
@@ -133,45 +124,14 @@
 				"code_analysis": null
 			}
 		},
-		"default_properties": [
-			{
-				"name": "gr.dockerregistry.ca_cert",
-				"value": "secret:121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.ca_cert",
-				"protected": true,
-				"type": "string",
-				"secret": true,
-				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.ca_cert"
-			},
-			{
-				"name": "gr.dockerregistry.password",
-				"value": "secret:121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.password",
-				"protected": true,
-				"type": "string",
-				"secret": true,
-				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.password"
-			},
-			{
-				"name": "gr.dockerregistry.repo_url",
-				"value": "docker.calculi.io:8443",
-				"type": "string"
-			},
-			{
-				"name": "gr.dockerregistry.username",
-				"value": "secret:121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.username",
-				"protected": true,
-				"type": "string",
-				"secret": true,
-				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/2a9a2295-ddd4-480a-4bd1-6c2b7aeaf1de/7a368b3d-b8d5-41ed-72da-5cc362957cbb/3a697b8b-051b-493b-50f9-f818583c1723/gr.dockerregistry.username"
-			}
-		],
+		"default_properties": [],
 		"deployment_files": [],
 		"application_init": {},
 		"process": {
 			"init": {
 				"command": "bin/start-service.sh"
 			}
-		},
-		"releases": []
+		}
 	},
 	"organization": {
 		"orgname": "Tutorial"
